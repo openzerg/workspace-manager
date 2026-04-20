@@ -4,8 +4,8 @@ import { connectNodeAdapter } from "@connectrpc/connect-node"
 import { WorkspaceManagerClient } from "@openzerg/common"
 import { openDB, autoMigrate } from "../src/db.js"
 import { createWorkspaceManagerRouter } from "../src/router.js"
-import { PodmanPodClient } from "@openzerg/pod-client"
-import type { PodClient } from "@openzerg/pod-client"
+import { PodmanPodClient } from "@openzerg/common/pod-client"
+import type { PodClient } from "@openzerg/common/pod-client"
 import { randomUUID } from "node:crypto"
 
 const PG_PORT = 15434

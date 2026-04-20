@@ -5,7 +5,7 @@ import { WorkspaceManagerClient } from "@openzerg/common"
 import { PodmanCompose, waitForPort } from "../../openzerg/e2e/compose-helper.js"
 import { openDB, autoMigrate } from "../src/db.js"
 import { createWorkspaceManagerRouter } from "../src/router.js"
-import type { PodClient } from "@openzerg/pod-client"
+import type { PodClient } from "@openzerg/common/pod-client"
 import { randomUUID } from "node:crypto"
 
 const PG_PORT = 15434

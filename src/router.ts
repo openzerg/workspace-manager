@@ -1,7 +1,7 @@
 import type { ConnectRouter } from "@connectrpc/connect"
 import { WorkspaceManagerService } from "@openzerg/common/gen/workspacemanager/v1_pb.js"
 import type { DB } from "./db.js"
-import type { PodClient } from "@openzerg/pod-client"
+import type { PodClient } from "@openzerg/common/pod-client"
 import { createWorkspaceHandlers } from "./handlers/workspace.js"
 import { createWorkerHandlers } from "./handlers/worker.js"
 

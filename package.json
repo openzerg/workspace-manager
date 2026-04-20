@@ -14,7 +14,6 @@
     "@connectrpc/connect": "^2.1.1",
     "@connectrpc/connect-node": "^2.1.1",
     "@openzerg/common": "file:../common/common-spec",
-    "@openzerg/pod-client": "file:../common/common-pod-client",
     "kysely": "^0.28.0",
     "kysely-postgres-js": "^3.0.0",
     "neverthrow": "^8.2.0",

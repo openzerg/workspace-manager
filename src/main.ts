@@ -1,7 +1,7 @@
 import { createServer } from "node:http"
 import { connectNodeAdapter } from "@connectrpc/connect-node"
 import { autoMigrate, openDB } from "./db.js"
-import { PodmanPodClient } from "@openzerg/pod-client"
+import { PodmanPodClient } from "@openzerg/common/pod-client"
 import { createWorkspaceManagerRouter } from "./router.js"
 
 async function main() {

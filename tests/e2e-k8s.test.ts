@@ -4,7 +4,7 @@ import { connectNodeAdapter } from "@connectrpc/connect-node"
 import { WorkspaceManagerClient } from "@openzerg/common"
 import { openDB, autoMigrate } from "../src/db.js"
 import { createWorkspaceManagerRouter } from "../src/router.js"
-import { KubernetesClient } from "@openzerg/pod-client"
+import { KubernetesClient } from "@openzerg/common/pod-client"
 import { randomUUID } from "node:crypto"
 import { execSync } from "node:child_process"
 

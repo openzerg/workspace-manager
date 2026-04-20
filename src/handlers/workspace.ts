@@ -1,5 +1,5 @@
 import type { DB } from "../db.js"
-import type { PodClient } from "@openzerg/pod-client"
+import type { PodClient } from "@openzerg/common/pod-client"
 import { randomUUID } from "node:crypto"
 
 const now = () => BigInt(Date.now())
