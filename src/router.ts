@@ -1,13 +1,13 @@
 import type { ConnectRouter } from "@connectrpc/connect"
 import { WorkspaceManagerService } from "@openzerg/common/gen/workspacemanager/v1_pb.js"
-import type { DB } from "./db.js"
+import type { GelClient } from "@openzerg/common/gel"
 import type { PodClient } from "@openzerg/common/pod-client"
 import { createWorkspaceHandlers } from "./handlers/workspace.js"
 import { createWorkerHandlers } from "./handlers/worker.js"
 
-export function createWorkspaceManagerRouter(db: DB, podClient: PodClient) {
-  const workspace = createWorkspaceHandlers(db, podClient)
-  const worker = createWorkerHandlers(db, podClient)
+export function createWorkspaceManagerRouter(gel: GelClient, podClient: PodClient) {
+  const workspace = createWorkspaceHandlers(gel, podClient)
+  const worker = createWorkerHandlers(gel, podClient)
 
   return (router: ConnectRouter) => {
     router.service(WorkspaceManagerService, {

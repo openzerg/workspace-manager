@@ -1,23 +1,16 @@
 import { createServer } from "node:http"
 import { connectNodeAdapter } from "@connectrpc/connect-node"
-import { autoMigrate, openDB } from "./db.js"
+import { createGelClient } from "@openzerg/common/gel"
 import { PodmanPodClient } from "@openzerg/common/pod-client"
 import { createWorkspaceManagerRouter } from "./router.js"
 
 async function main() {
-  const databaseURL = process.env.DATABASE_URL
-  if (!databaseURL) {
-    console.error("[workspace-manager] DATABASE_URL is required")
-    process.exit(1)
-  }
-
+  const dsn = process.env.GEL_DSN ?? "gel://admin@uz-gel/main?tls_security=insecure"
   const containerUrl = process.env.CONTAINER_URL || process.env.PODMAN_SOCKET
 
-  await autoMigrate(databaseURL)
-
-  const db = openDB(databaseURL)
+  const gel = createGelClient(dsn)
   const client = new PodmanPodClient(containerUrl)
-  const router = createWorkspaceManagerRouter(db, client)
+  const router = createWorkspaceManagerRouter(gel, client)
 
   const server = createServer(connectNodeAdapter({ routes: router }))
 

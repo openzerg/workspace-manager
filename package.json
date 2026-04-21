@@ -13,11 +13,9 @@
     "@bufbuild/protobuf": "^2.11.0",
     "@connectrpc/connect": "^2.1.1",
     "@connectrpc/connect-node": "^2.1.1",
-    "@openzerg/common": "github:openzerg/common#main",
-    "kysely": "^0.28.0",
-    "kysely-postgres-js": "^3.0.0",
-    "neverthrow": "^8.2.0",
-    "postgres": "^3.4.5"
+    "@openzerg/common": "file:../common",
+    "gel": "^2.2.0",
+    "neverthrow": "^8.2.0"
   },
   "devDependencies": {
     "@types/bun": "^1.3.11",
